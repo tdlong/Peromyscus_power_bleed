@@ -16,6 +16,7 @@ anova(lm(normBleed~Sex+Age+Weight+timeDOB,data=k5))
 k5$residNormBleed = lm(normBleed~Sex+Age+timeDOB,data=k5)$resid
 write.table(k5,"k5.txt")
 ```
+```
 Analysis of Variance Table
 
 Response: normBleed
@@ -27,5 +28,5 @@ timeDOB     1  32.254  32.254 40.7589 4.874e-10 ***
 Residuals 392 310.202   0.791                      
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
+```
 ## next section
