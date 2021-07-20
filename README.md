@@ -1,6 +1,25 @@
 # Peromyscus_power_bleed
 Code associated with the peromyscus power / bleed-time paper (Long et al 2021)
 
+## Genetic background variance
+- *genetic_background_variance.py*
+- *genetic_background_variance.sh*
+
+## Kinship matrix
+- *Mjj_average.py*
+- *Mjj_calculation.sh*
+- *Mjj_combine.sh*
+- *Mjj_setup.sh*
+- *Mjj_sum.py*
+
+## Simulation scans
+- *hapsnp_calculation.R*
+- *hapsnp_calculation.sh*
+- *hapsnp_calculation_save.R*
+- *hapsnp_tables_setup.sh*
+- *hapsnp_tables_setup_manipulate.py*
+- *hapsnp_tests.sh*
+
 ## Bleeding time data (and normalization)
 ```R
 k5=read.table("k5.txt")
@@ -29,4 +48,25 @@ Residuals 392 310.202   0.791
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 ```
-## next section
+
+## Bleeding time scans
+- *demonstration_chromosome_scans.R*
+- *demonstration_manhattan.R*
+- *demonstration_qq.R*
+- *demonstration_scan.R*
+- *demonstration_scan.sh*
+- *demonstration_setup.sh*
+- *dosage_association.R*
+
+## Figures and Tables
+- *stitch_validation.R*
+- *stitch_validation_setup.py*
+- *stitch_validation_setup.sh*
+- *summary_plots.R*
+- *summary_significance_threshold_qq.R*
+- *summary_statistics.R*
+- *summary_statistics_plots.R*
+- *figures.sh*
+
+## Other
+- *useful_functions.R*
