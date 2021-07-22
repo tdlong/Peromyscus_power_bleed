@@ -1,24 +1,14 @@
 # Peromyscus_power_bleed
 Code associated with the peromyscus power / bleed-time paper (Long et al 2021)
 
-## Genetic background variance
-- *genetic_background_variance.py*
-- *genetic_background_variance.sh*
-
 ## Kinship matrix
-- *Mjj_setup.sh*
-- *Mjj_sum.py*
-- *Mjj_calculation.sh*
-- *Mjj_average.py*
-- *Mjj_combine.sh*
+*generate_Mjj.sh* generates a kinship matrix.
 
-## Simulation scans
-- *hapsnp_tables_setup_manipulate.py*
-- *hapsnp_tables_setup.sh*
-- *hapsnp_calculation_save.R*
-- *hapsnp_calculation.R*
-- *hapsnp_calculation.sh*
-- *hapsnp_tests.sh*
+## Simulating phenotypes
+*generate_Y.sh* generates simulated phenotypes for 3 different genetic models at a causative locus.
+
+## Scans
+*scan.sh* performs both a marker- and haplotype-based scan of a chromosome given a phenotype.
 
 ## Bleeding time data (and normalization)
 ```R
@@ -51,25 +41,3 @@ Residuals 392 310.202   0.791
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 ```
-
-## Bleeding time scans
-- *demonstration_setup.sh*
-- *demonstration_scan.R*
-- *demonstration_scan.sh*
-
-## Tables and Figures
-- *summary_statistics.R*
-- *stitch_validation_setup.py*
-- *stitch_validation_setup.sh*
-- *stitch_validation.R*
-- *summary_significance_threshold_qq.R*
-- *summary_plots.R*
-- *summary_statistics_plots.R*
-- *demonstration_manhattan.R*
-- *demonstration_chromosome_scans.R*
-- *dosage_association.R*
-- *demonstration_qq.R*
-- *figures.sh*
-
-## Other
-- *useful_functions.R*
