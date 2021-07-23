@@ -2,7 +2,7 @@
 Code associated with the peromyscus power / bleed-time paper (Long et al 2021)
 
 ## Kinship matrix
-*generate_Mjj.sh* generates a kinship matrix.
+*generate_Mjj.sh* generates a kinship matrix, provided the following arguments:
 1. save_data folder path
 2. software folder path
 3. path to list of gzipped vcf filepaths
@@ -13,7 +13,7 @@ Code associated with the peromyscus power / bleed-time paper (Long et al 2021)
 
 
 ## Simulating phenotypes
-*generate_Y.sh* generates simulated phenotypes for 3 different genetic models at a causative locus.
+*generate_Y.sh* generates simulated phenotypes for 3 different genetic models at a causative locus, provided the following arguments:
 1. save_data folder path
 2. software folder path
 3. path to list of gzipped vcf filepaths
@@ -25,7 +25,7 @@ Code associated with the peromyscus power / bleed-time paper (Long et al 2021)
 
 
 ## Scans
-*scan.sh* performs both a marker- and haplotype-based scan of a chromosome given a phenotype.
+*scan.sh* performs both a marker- and haplotype-based scan of a chromosome given a phenotype, provided the following arguments:
 1. save_data folder path
 2. software folder path
 3. path to gzipped vcf file of the chromosome that scans are performed on
