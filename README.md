@@ -10,6 +10,7 @@ Code associated with the peromyscus power / bleed-time paper (Long et al 2021)
 5. path to full list of individuals
 6. path to output file of relatedness values
 
+
 ## Simulating phenotypes
 *generate_Y.sh* generates simulated phenotypes for 3 different genetic models at a causative locus.
 1. save_data folder path
@@ -19,6 +20,7 @@ Code associated with the peromyscus power / bleed-time paper (Long et al 2021)
 5. position of causative snp
 6. path to subset list of individuals
 7. path to full list of individuals
+
 
 ## Scans
 *scan.sh* performs both a marker- and haplotype-based scan of a chromosome given a phenotype.
@@ -33,6 +35,7 @@ Code associated with the peromyscus power / bleed-time paper (Long et al 2021)
 9. results folder path
 10. path to file where the filepath of a scan is printed to when the scan is completed
 11. genetic model (either "single", "multiple", or "rare")
+
 
 ## Bleeding time data (and normalization)
 ```R
