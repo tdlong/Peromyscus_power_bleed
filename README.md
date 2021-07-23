@@ -4,7 +4,7 @@ Code associated with the peromyscus power / bleed-time paper (Long et al 2021)
 ## Prerequisites
 Some files and directories needed include:
 - a `save_data` directory, where important files like the kinship matrix or simulated phenotypes are stored
-- a `software` directory, download [here](https://github.com/tdlong/Peromyscus_power_bleed/software)
+- a `software` directory, download [here](https://github.com/tdlong/Peromyscus_power_bleed/tree/main/software)
 - a `gzipped_vcf_files_list` file, a list of gzipped filepaths to *.vcf* files containing STITCH data for a chromosome (unzip *`gzipped_vcf_files.txt.gz`* in the *.tar* folder for an example)
 - an `individuals_full` file, a tab-delimited list of all individual IDs used by STITCH in imputing genotypes (unzip and see *`individuals/all_individuals.tsv.gz`* in the *.tar* folder)
 - an `individuals_subset` file, a tab-delimited list of the subset of 297 individual IDs used throughout the paper (unzip and see *`individuals/individuals.tsv.gz`* in the *.tar* folder)
