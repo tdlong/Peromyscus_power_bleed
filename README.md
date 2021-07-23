@@ -8,7 +8,6 @@ Code associated with the peromyscus power / bleed-time paper (Long et al 2021)
 3. path to list of gzipped vcf filepaths
 4. path to subset list of individuals
 5. path to full list of individuals
-6. path to output file of relatedness values
 
 
 
@@ -33,10 +32,9 @@ Code associated with the peromyscus power / bleed-time paper (Long et al 2021)
 5. path to full list of individuals
 6. path to phenotype file
 7. name of column for the phenotype in the phenotype file
-8. path to kinship matrix data
-9. results folder path
-10. path to file where the filepath of a scan is printed to when the scan is completed
-11. genetic model (either "single", "multiple", or "rare")
+8. results folder path
+9. path to file where the filepath of a scan is printed to when the scan is completed
+10. genetic model (either "single", "multiple", or "rare")
 
 
 
