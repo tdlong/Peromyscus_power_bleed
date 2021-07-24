@@ -27,7 +27,7 @@ module load python/3.8.0
 summing_program="$software/Mjj_sum.py"
 cat $all_genome_haplotypes | python $summing_program $subset_individuals_address $full_individuals_address > $Mjj_sum
 
-# rm $all_genome_haplotypes
+rm $all_genome_haplotypes
 
 
 
@@ -37,4 +37,4 @@ cat $all_genome_haplotypes | python $summing_program $subset_individuals_address
 averaging_program="$software/Mjj_average.py"
 cat $Mjj_sum | python $averaging_program $subset_individuals_address > $Mjj_values
 
-# rm $Mjj_sum
+rm $Mjj_sum
