@@ -8,9 +8,10 @@ Some files and directories needed include:
 - a `save_data` directory, where important files like the kinship matrix or simulated phenotypes are stored
 - a `software` directory, download [here](https://github.com/tdlong/Peromyscus_power_bleed/tree/main/software)
 - a `gzipped_vcf_files_list` file, a list of gzipped absolute filepaths to *.vcf* files containing STITCH data for a chromosome, one filepath per line (unzip *gzipped_vcf_files.txt.gz* in the *.tar* folder for an example or [here](https://github.com/tdlong/Peromyscus_power_bleed/blob/main/save_data/gzipped_vcf_files.txt)*)
-    - *only an example, since the absolute filepaths inside are specific to the UCI HPC3 cluster
 - an `individuals_full` file, a tab-delimited list of all individual IDs used by STITCH in imputing genotypes (unzip and use *individuals/all_individuals.tsv.gz* in the *.tar* folder or [here](https://github.com/tdlong/Peromyscus_power_bleed/blob/main/save_data/all_individuals.tsv))
 - an `individuals_subset` file, a tab-delimited list of the subset of 297 individual IDs used throughout the paper (unzip and use *individuals/individuals.tsv.gz* in the *.tar* folder or [here](https://github.com/tdlong/Peromyscus_power_bleed/blob/main/save_data/individuals.tsv))
+
+* This file is only an example, as the absolute filepaths inside are specific to the UCI HPC3 cluster
 
 
 
