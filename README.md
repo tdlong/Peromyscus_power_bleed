@@ -38,11 +38,11 @@ Some files and directories needed include:
 3. path to gzipped *.vcf* file of STITCH imputation data for the chromosome that will be scanned
 4. path to **unzipped** `individuals_subset`
 5. path to **unzipped** `individuals_full`
-6. path to phenotype file (containing at least an **INDIVIDUAL** and phenotype column, often called **Y**)
+6. path to phenotype file (containing at least a column called **INDIVIDUAL** and a phenotype column)
 7. name of the column with phenotype data in the phenotype file of the previous argument
 8. path to results directory (subdirectories `snpbased` and `hapbased` will be created for the outputs of marker- and haplotype-based scans, respectively)
 9. path to completed scans file where a scan's filepath is printed once that scan is complete
-10. genetic model (either "single" [single SNP causative], "multiple" [10 SNPs causative], "rare" [all SNPs causative], or "unknown")
+10. genetic model (either **single** [single SNP causative], **multiple** [10 SNPs causative], **rare** [all SNPs causative], or **unknown**)
 
 
 
