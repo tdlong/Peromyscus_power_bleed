@@ -3,13 +3,6 @@
 # using both a marker- and haplotype-based calculation method.
 # Phillip Long
 # December 29, 2020
-' .sh runner
-####
-module load R/3.6.2
-# test type options are "single", "multiple", "rare", or "unknown"
-R --vanilla -f $program --args test_type=$1 phenotype_address="" phenotype_name="Y_$1" individuals_address="/share/adl/pnlong/mouseproject/save_data/individuals.tsv" snp_table_address=$3 hap_table_address=$4 kinship_address=$5 batch_size=100 rows_in_chunk=5000 drop_PC_less_than=0.05 LOD_threshold=2 snp_out=$snp_based_out hap_out=$hap_based_out completed_files=$8
-####
-'
 ####################################################
 
 
