@@ -5,9 +5,9 @@ Code associated with the peromyscus power / bleed-time paper (Long et al 2021)
 Some files and directories needed include:
 - a `save_data` directory, where important files like the kinship matrix or simulated phenotypes are stored
 - a `software` directory, download [here](https://github.com/tdlong/Peromyscus_power_bleed/tree/main/software)
-- a `gzipped_vcf_files_list` file, a list of gzipped filepaths to *.vcf* files containing STITCH data for a chromosome (unzip *`gzipped_vcf_files.txt.gz`* in the *.tar* folder for an example)
-- an `individuals_full` file, a tab-delimited list of all individual IDs used by STITCH in imputing genotypes (unzip and see *`individuals/all_individuals.tsv.gz`* in the *.tar* folder)
-- an `individuals_subset` file, a tab-delimited list of the subset of 297 individual IDs used throughout the paper (unzip and see *`individuals/individuals.tsv.gz`* in the *.tar* folder)
+- a `gzipped_vcf_files_list` file, a list of gzipped filepaths to *.vcf* files containing STITCH data for a chromosome, one filepath per line (unzip *gzipped_vcf_files.txt.gz* in the *.tar* folder for an example)
+- an `individuals_full` file, a tab-delimited list of all individual IDs used by STITCH in imputing genotypes (unzip and use *individuals/all_individuals.tsv.gz* in the *.tar* folder)
+- an `individuals_subset` file, a tab-delimited list of the subset of 297 individual IDs used throughout the paper (unzip and use *individuals/individuals.tsv.gz* in the *.tar* folder)
 
 ## Kinship matrix
 *`generate_Mjj.sh`* generates a kinship matrix, provided the following arguments:
@@ -24,8 +24,8 @@ Some files and directories needed include:
 1. path to `save_data` directory
 2. path to `software` directory
 3. path to **unzipped** `gzipped_vcf_files_list`
-4. path to gzipped *.vcf* file for the causative SNP's chromosome
-5. position of causative SNP (note that if the given SNP is not in the *.vcf* file, the closest valid SNP is used)
+4. path to gzipped *.vcf* file of STITCH imputation data for the causative SNP's chromosome
+5. position of causative SNP (note that if the given SNP is not in the gzipped *.vcf* file, the closest valid SNP is used)
 6. path to **unzipped** `individuals_subset`
 7. path to **unzipped** `individuals_full`
 
@@ -35,14 +35,14 @@ Some files and directories needed include:
 *`scan.sh`* performs both a marker- and haplotype-based scan of a chromosome given a phenotype, provided the following arguments:
 1. path to `save_data` directory
 2. path to `software` directory
-3. path to gzipped vcf file of the chromosome that scans are performed on
+3. path to gzipped *.vcf* file of STITCH imputation data for the chromosome that will be scanned
 4. path to **unzipped** `individuals_subset`
 5. path to **unzipped** `individuals_full`
-6. path to phenotype file
-7. name of the column for the phenotype in the phenotype file
-8. results folder path
-9. path to file where the filepath of a scan is printed to when the scan is completed
-10. genetic model (either "single", "multiple", or "rare")
+6. path to phenotype file (containing at least an **INDIVIDUAL** and phenotype column, often called **Y**)
+7. name of the column with phenotype data in the phenotype file of the previous argument
+8. path to results directory (subdirectories `snpbased` and `hapbased` will be created for the outputs of marker- and haplotype-based scans, respectively)
+9. path to completed scans file where a scan's filepath is printed once that scan is complete
+10. genetic model (either "single" [single SNP causative], "multiple" [10 SNPs causative], "rare" [all SNPs causative], or "unknown")
 
 
 
