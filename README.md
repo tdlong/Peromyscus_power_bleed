@@ -24,7 +24,7 @@ Some files and directories needed include:
 
 
 ## Simulating phenotypes
-*`generate_Y.sh`* generates simulated phenotypes under 3 different genetic models at a given causative SNP, provided the following arguments (in that order):
+[*`generate_Y.sh`*](https://github.com/tdlong/Peromyscus_power_bleed/blob/main/generate_Y.sh) generates simulated phenotypes under 3 different genetic models at a given causative SNP, provided the following arguments (in that order):
 1. path to `save_data` directory
 2. path to `software` directory
 3. path to **unzipped** `gzipped_vcf_files_list`
@@ -36,7 +36,7 @@ Some files and directories needed include:
 
 
 ## Scans
-*`scan.sh`* performs both a marker- and haplotype-based scan of a chromosome given a phenotype, provided the following arguments (in that order):
+[*`scan.sh`*](https://github.com/tdlong/Peromyscus_power_bleed/blob/main/scan.sh) performs both a marker- and haplotype-based scan of a chromosome given a phenotype, provided the following arguments (in that order):
 1. path to `save_data` directory
 2. path to `software` directory
 3. path to gzipped *.vcf* file of STITCH imputation data for the chromosome that will be scanned
