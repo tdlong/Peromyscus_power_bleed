@@ -1,6 +1,8 @@
 # Peromyscus_power_bleed
 Code associated with the peromyscus power / bleed-time paper (Long et al 2021)
 
+
+
 ## Prerequisites
 Some files and directories needed include:
 - a `save_data` directory, where important files like the kinship matrix or simulated phenotypes are stored
@@ -9,8 +11,10 @@ Some files and directories needed include:
 - an `individuals_full` file, a tab-delimited list of all individual IDs used by STITCH in imputing genotypes (unzip and use *individuals/all_individuals.tsv.gz* in the *.tar* folder)
 - an `individuals_subset` file, a tab-delimited list of the subset of 297 individual IDs used throughout the paper (unzip and use *individuals/individuals.tsv.gz* in the *.tar* folder)
 
+
+
 ## Kinship matrix
-*`generate_Mjj.sh`* generates a kinship matrix, provided the following arguments:
+*`generate_Mjj.sh`* generates a kinship matrix, provided the following arguments (in that order):
 1. path to `save_data` directory
 2. path to `software` directory
 3. path to **unzipped** `gzipped_vcf_files_list`
@@ -20,7 +24,7 @@ Some files and directories needed include:
 
 
 ## Simulating phenotypes
-*`generate_Y.sh`* generates simulated phenotypes for 3 different genetic models at a given causative SNP, provided the following arguments:
+*`generate_Y.sh`* generates simulated phenotypes under 3 different genetic models at a given causative SNP, provided the following arguments (in that order):
 1. path to `save_data` directory
 2. path to `software` directory
 3. path to **unzipped** `gzipped_vcf_files_list`
@@ -32,7 +36,7 @@ Some files and directories needed include:
 
 
 ## Scans
-*`scan.sh`* performs both a marker- and haplotype-based scan of a chromosome given a phenotype, provided the following arguments:
+*`scan.sh`* performs both a marker- and haplotype-based scan of a chromosome given a phenotype, provided the following arguments (in that order):
 1. path to `save_data` directory
 2. path to `software` directory
 3. path to gzipped *.vcf* file of STITCH imputation data for the chromosome that will be scanned
