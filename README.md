@@ -11,7 +11,7 @@ Some files and directories needed include:
 - an `individuals_full` file, a tab-delimited list of all individual IDs used by STITCH in imputing genotypes (unzip and use *individuals/all_individuals.tsv.gz* in the *.tar* folder or [here](https://github.com/tdlong/Peromyscus_power_bleed/blob/main/save_data/all_individuals.tsv))
 - an `individuals_subset` file, a tab-delimited list of the subset of 297 individual IDs used throughout the paper (unzip and use *individuals/individuals.tsv.gz* in the *.tar* folder or [here](https://github.com/tdlong/Peromyscus_power_bleed/blob/main/save_data/individuals.tsv))
 
-* This file is only an example, as the absolute filepaths inside are specific to the UCI HPC3 cluster
+*This file is only an example, as the absolute filepaths inside are specific to the UCI HPC3 cluster
 
 
 
