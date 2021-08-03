@@ -13,7 +13,7 @@
 # $7 = name of column for the phenotype in the phenotype file
 # $8 = results folder path
 # $9 = path to file where the filepath of a scan is printed to when the scan is completed
-# $10 = genetic model (either "single", "multiple", or "rare")
+# $10 = genetic model (either "single", "multiple", "rare", or "unknown")
 
 save_data=${1}
 software=${2}
