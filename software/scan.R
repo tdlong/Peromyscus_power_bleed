@@ -52,6 +52,20 @@ wc_l <- function(file) {
 		return(count)
 	}
 }
+backspace_placeholder_sequence = "\b \b"
+evaluate_backspace <- function(string, backspace_placeholder) {
+	backspace_occurences <- str_locate(string = string, pattern = backspace_placeholder)[1,]
+	
+	first_occurence <- str_locate(string = string, pattern = backspace_placeholder)[1,]
+	while (!mean(is.na(first_occurence))) {
+		
+		str_sub(string = string, start = as.numeric(first_occurence["start"] - 1), end = as.numeric(first_occurence["end"])) <- ""
+		
+		first_occurence <- str_locate(string = string, pattern = backspace_placeholder)[1,]
+	}
+	
+	return(string)
+}
 
 # FOR TESTING
 # arguments <- c(test_type="single", phenotype_address="", phenotype_name="Y_single", individuals_address="/share/adl/pnlong/mouseproject/save_data/individuals.tsv", snp_table_address="/share/adl/pnlong/mouseproject/save_data/snp_table_Chr23.tsv", hap_table_address="/share/adl/pnlong/mouseproject/save_data/hap_table_Chr23.tsv", kinship_address="/share/adl/pnlong/mouseproject/save_data/Mjj_values_all_pnl.tsv", batch_size="100", rows_in_chunk="5000", drop_PC_less_than="0.05", LOD_threshold="2", snp_out="/share/adl/pnlong/mouseproject/results/Chr23_single_snpbased/single_csnp_snpbased", hap_out="/share/adl/pnlong/mouseproject/results/Chr23_single_hapbased/single_csnp_hapbased", completed_files="/share/adl/pnlong/mouseproject/results/completed_tests.txt")
@@ -85,7 +99,7 @@ tsnp_chromosome_number = strsplit(x = snp_table_address, split = "\\.") %>% unli
 test_type = trimws(tolower(as.character(arguments["test_type"]))) %>%
 	ifelse(test = (. %in% c("single", "multiple", "rare")),
 				 yes = .,
-				 no = "\b \b")
+				 no = backspace_placeholder_sequence)
 if (("CSNP_CHROM" %in% colnames(phenotype)) & ("CSNP" %in% colnames(phenotype)) & (test_type %in% c("single", "multiple", "rare"))) {
 	# This information will later be printed to the first line of each of the 2 output files
 	# (another  value will be added later: hap-based or snp-based):
@@ -115,7 +129,7 @@ if (("CSNP_CHROM" %in% colnames(phenotype)) & ("CSNP" %in% colnames(phenotype)) 
 										 sep = "=")
 	
 	csnp_chromosome_number = tsnp_chromosome_number
-	causative_snp = "\b \b"
+	causative_snp = backspace_placeholder_sequence
 	
 	scan_info <- paste(tsnp_chrom, sep = "\t")
 }
@@ -187,7 +201,8 @@ remove(Mjj_values) # to save memory
 
 ####################################################
 # MARKER
-snp_out_path = trimws(paste(as.character(arguments["snp_out"]), paste(paste("Chr", csnp_chromosome_number, "_", test_type, "_snpbased",  sep = ""), causative_snp, "tsv", sep = "."), sep = "/")) # address of the output file for the marker-based scan
+snp_out_path = evaluate_backspace(string = trimws(paste(as.character(arguments["snp_out"]), paste(paste("Chr", csnp_chromosome_number, "_", test_type, "_snpbased",  sep = ""), causative_snp, "tsv", sep = "."), sep = "/")), # address of the output file for the marker-based scan
+																	backspace_placeholder = backspace_placeholder_sequence)
 
 if (!file.exists(snp_out_path)) { # if snp_out_path does not exist yet
 	# GFIT NULL MODEL
@@ -343,7 +358,8 @@ if (file.exists(snp_out_path)) {
 
 ####################################################
 # HAPLOTYPE
-hap_out_path = trimws(paste(as.character(arguments["hap_out"]), paste(paste("Chr", csnp_chromosome_number, "_", test_type, "_hapbased",  sep = ""), causative_snp, "tsv", sep = "."), sep = "/"))
+hap_out_path = evaluate_backspace(string = trimws(paste(as.character(arguments["hap_out"]), paste(paste("Chr", csnp_chromosome_number, "_", test_type, "_hapbased",  sep = ""), causative_snp, "tsv", sep = "."), sep = "/")),
+																	backspace_placeholder = backspace_placeholder_sequence)
 hap_nrow = wc_l(hap_out_path) # count the number of lines already in the haplotype-based output
 
 # GET USEFUL DATA FOR HAPLOTYPE TEST
