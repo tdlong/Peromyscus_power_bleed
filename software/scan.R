@@ -66,6 +66,8 @@ phenotype <- read_tsv(file = as.character(arguments["phenotype_address"]), col_n
 	filter(INDIVIDUAL %in% individuals) %>%
 	arrange(as.numeric(INDIVIDUAL)) # alphanumerically sort INDIVIDUAL IDs in ascending order
 
+individuals <- unique(phenotype$INDIVIDUAL)
+
 snp_table_address = as.character(arguments["snp_table_address"])
 tsnp_chromosome_number = strsplit(x = snp_table_address, split = "\\.") %>% unlist() %>%
 	extract(1) %>%
@@ -249,7 +251,7 @@ if (!file.exists(snp_out_path)) { # if snp_out_path does not exist yet
 		#############
 		# transpose snp_table so it can be fed to matlm function
 		predictor <- snp_table %>%
-			select(-POS) %>%
+			select(all_of(individuals)) %>%
 			t()
 		#############
 		
